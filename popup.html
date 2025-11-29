@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainstem</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <div class="logo-section">
+          <div>
+            <h1>Brainstem</h1>
+            <p class="subtitle">Save links & highlights</p>
+          </div>
+        </div>
+        <div class="count-badge" id="countBadge">0 brainstem</div>
+      </div>
+
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-filter="all">
+          All
+        </button>
+        <button class="tab-btn" data-filter="links">
+          Links
+        </button>
+        <button class="tab-btn" data-filter="text">
+          Text
+        </button>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <div class="empty-state" id="emptyState">
+        <h3>No brainstem yet</h3>
+        <p>Right-click on links or highlight text to save</p>
+      </div>
+      <div class="brainstems-list" id="brainstemsList"></div>
+    </div>
+
+    <button class="clear-all-btn" id="clearAllBtn" style="display: none;">
+      Clear All Brainstem
+    </button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Brainstem",
+  "version": "1.0.0",
+  "description": "Save links and highlighted text with a right-click",
+  "permissions": ["contextMenus", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "./assets/icon16.png",
+      "48": "./assets/icon48.png",
+      "128": "./assets/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "./assets/icon16.png",
+    "48": "./assets/icon48.png",
+    "128": "./assets/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
