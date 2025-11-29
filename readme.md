@@ -1,4 +1,4 @@
-# Note - Chrome Extension
+# Brainstem - Chrome Extension
 
 Save links and highlighted text with a simple right-click.
 
