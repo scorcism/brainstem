@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Brainstem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Save links and highlighted text with a right-click",
   "permissions": ["contextMenus", "storage"],
+  "homepage_url": "https://github.com/scorcism/brainstem",
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

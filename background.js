@@ -1,17 +1,27 @@
 // Create context menus when extension is installed
 chrome.runtime.onInstalled.addListener(() => {
-  // Context menu for links
-  chrome.contextMenus.create({
-    id: "saveLink",
-    title: "Save to Brainstem",
-    contexts: ["link"],
-  });
+  // Remove existing menu items to avoid duplicates
+  chrome.contextMenus.removeAll(() => {
+    // Context menu for links
+    chrome.contextMenus.create({
+      id: "saveLink",
+      title: "Save Link to Brainstem",
+      contexts: ["link"],
+    });
 
-  // Context menu for selected text
-  chrome.contextMenus.create({
-    id: "saveText",
-    title: "Save to Brainstem",
-    contexts: ["selection"],
+    // Context menu for selected text
+    chrome.contextMenus.create({
+      id: "saveText",
+      title: "Save Text to Brainstem",
+      contexts: ["selection"],
+    });
+
+    // Context menu for images
+    chrome.contextMenus.create({
+      id: "saveImage",
+      title: "Save Image to Brainstem",
+      contexts: ["image"],
+    });
   });
 });
 
@@ -21,8 +31,8 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     id: Date.now().toString(),
     frameUrl: info.frameUrl,
     pageUrl: info.pageUrl,
-    favIconUrl: tab.favIconUrl,
-    title: tab.title,
+    favIconUrl: tab ? tab.favIconUrl : '',
+    title: tab ? tab.title : '',
     timestamp: Date.now(),
   };
   let details = rawDetails;
@@ -38,6 +48,12 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       content: info.selectionText,
       type: "text",
     };
+  } else if (info.menuItemId === "saveImage") {
+    details = {
+      ...rawDetails,
+      content: info.srcUrl,
+      type: "image",
+    };
   }
   saveToStorage(details);
 });
@@ -48,7 +64,7 @@ function saveToStorage(details) {
     const brainstems = result.savedBrainstem || [];
     brainstems.unshift(details);
     chrome.storage.local.set({ savedBrainstem: brainstems }, () => {
-      console.log("Link saved:", url);
+      console.log("Item saved:", details);
     });
   });
 }

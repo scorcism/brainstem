@@ -38,14 +38,15 @@ body {
 }
 
 .logo-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  background: transparent;
+  padding: 0;
+}
+
+.logo-icon img {
+  max-width: 32px;
 }
 
 h1 {
@@ -183,9 +184,8 @@ h1 {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
-.note-body {
-  flex: 1;
-  min-width: 0;
+.note-icon.image {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
 
 .note-text {
@@ -298,4 +298,39 @@ h1 {
 
 .content::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
+}
+
+/* Notification Toast */
+.notification {
+  width: 95%;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #1f2937;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+}
+
+.notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.notification.error {
+  background: #ef4444;
+}
+
+.notification.success {
+  background: #10b981;
 }
