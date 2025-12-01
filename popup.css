@@ -107,7 +107,6 @@ h1 {
 /* Content Area */
 .content {
   padding: 24px;
-  max-height: 500px;
   overflow-y: auto;
 }
 
@@ -333,4 +332,14 @@ h1 {
 
 .notification.success {
   background: #10b981;
+}
+
+.note-user-note {
+  font-size: 13px;
+  color: #374151;
+  margin: 2px 0;
+}
+
+.note-user-note-label {
+  font-weight: 600;
 }

@@ -34,6 +34,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     favIconUrl: tab ? tab.favIconUrl : '',
     title: tab ? tab.title : '',
     timestamp: Date.now(),
+    note: '',
   };
   let details = rawDetails;
   if (info.menuItemId === "saveLink") {

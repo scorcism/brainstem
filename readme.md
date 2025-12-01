@@ -33,6 +33,8 @@ Brainstem is a lightweight Chrome extension that helps you capture information f
 - **Text**: Select text on any page, right-click, and choose **"Save Text to Brainstem"**.
 - **Images**: Right-click on an image and select **"Save Image to Brainstem"**.
 
+<img src="./assets/demo-image.png" alt="Demo Image :)" width="400"/>
+
 ### Managing Brainstems
 1. Click the **Brainstem icon** in your browser toolbar.
 2. View all your saved items in the popup.
